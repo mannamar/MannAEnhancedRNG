@@ -34,6 +34,7 @@ body {
     background-repeat: no-repeat;
     background-position: right bottom;
     background-color: #000000;
+    background-attachment: fixed;
 }
 
 #generateBtn,

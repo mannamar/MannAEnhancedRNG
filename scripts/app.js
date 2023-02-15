@@ -1,3 +1,8 @@
+// Amardeep Mann
+// 2-15-23
+// Enhanced Random Name Generator
+// This time we created a random name generator that not only picks a random name, but also allows the addition/removal of names as well as the formation of groups
+
 import { saveToLocalStorageByName, getLocalStorage, removeFromLocalStorage } from "./localStorage.js";
 
 let namesList = getLocalStorage();
