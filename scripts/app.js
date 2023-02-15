@@ -13,6 +13,7 @@ let nameInp = document.getElementById('nameInp');
 let addNameBtn = document.getElementById('addNameBtn');
 let listCont = document.getElementById('listCont');
 let groupsBtn = document.getElementById('groupsBtn');
+let groupsCont = document.getElementById('groupsCont');
 
 generateBtn.addEventListener('click', PickName);
 clearBtn.addEventListener('click', ClearList);
@@ -61,8 +62,9 @@ function PickName() {
         outputText.textContent = 'Please add at least one name to the list';
         return;
     }
-    outputText.textContent = '';
+    outputText.textContent = 'Random pick';
     outputCont.classList.remove('d-none');
+    groupsCont.classList.add('d-none');
     let pick, randNum, pwrLvl;
     let count = 0;
     // This makes it so you never have the same person twice in a row
@@ -99,10 +101,12 @@ function ShowLastFive() {
 }
 
 function ClearList() {
+    outputText.textContent = '';
     outputCont.classList.add('d-none');
+    groupsCont.classList.add('d-none');
     lastFiveNames = [];
     pickTxt.textContent = '';
-    lastFiveTxt.textContent = '';
+    // lastFiveTxt.textContent = '';
 }
 
 groupsBtn.addEventListener('click', function() {
@@ -138,6 +142,32 @@ function createGroupsBySize() {
         }
     }
     console.log(groups);
+    populateGroups(groups);
+}
+
+function populateGroups(array) {
+    outputText.textContent = 'Groups';
+    groupsCont.innerHTML = '';
+    outputCont.classList.add('d-none');
+    groupsCont.classList.remove('d-none');
+    for (let i = 0; i < array.length; i++) {
+        let div = document.createElement('div');
+        div.classList.add('groupItem', 'd-flex', 'flex-column', 'justify-content-center', 'align-items-center', 'px-4');
+        let title = document.createElement('h4');
+        title.classList.add('groupTtl');
+        title.textContent = `Group ${i+1}`
+        div.append(title);
+
+        // Iterate over group members
+        let group = array[i];
+        for (let j = 0; j < group.length; j++) {
+            let name = document.createElement('h6');
+            name.textContent = group[j];
+            name.classList.add('groupTxt');
+            div.append(name);
+        }
+        groupsCont.append(div);
+    }
 }
 
 function createNumOfGroups() {

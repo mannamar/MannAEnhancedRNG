@@ -38,7 +38,7 @@ body {
 
 #generateBtn,
 #clearBtn {
-    margin-top: 65px;
+    margin-top: 20px;
     margin-bottom: 50px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
@@ -71,6 +71,8 @@ body {
 #listCont {
     max-width: 800px;
     /* background-color: aliceblue; */
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
 .listItem {
@@ -92,6 +94,42 @@ body {
     margin: 0;
 }
 
+#groupsCont {
+    max-width: 1000px;
+}
+
+.groupItem {
+    background-color: rgb(188, 16, 114);
+    min-height: 70px;
+    width: 200px;
+    border-radius: 15px;
+    text-align: center;
+
+    margin-top: 20px;
+    margin-left: 20px;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.groupTtl {
+    color: white;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration-line: underline;  
+}
+
+.groupTxt {
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#groupsBtn {
+    width: 150px;
+}
+
 .delBtn {
     transition: transform .15s; /* Animation */
     color: white;
@@ -102,4 +140,20 @@ body {
 
 .delBtn:hover {
     transform: scale(1.3);
+}
+
+#btnCont {
+    max-width: 1000px;
+}
+
+#groupSizeInp,
+#numGroupsInp {
+    margin-top: -5px;
+    margin-left: 10px;
+}
+
+#groupSizeRadio,
+#numGroupsRadio {
+    margin-right: 8px;
+    margin-bottom: 5px;
 }

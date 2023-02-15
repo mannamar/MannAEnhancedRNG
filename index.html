@@ -25,62 +25,100 @@
 
     <h1 class="text-center py-5">Random Name Picker</h1>
 
+    <div id="btnCont" class="container-fluid">
 
-    <div class="row">
-
-        <!-- Input and buttons (top left)-->
-        <div class="col-6">
-            <div class="d-flex justify-content-center">
-                <input id="nameInp" type="text" class="" placeholder="Enter a name to add" />
-                <button id="addNameBtn" type="button" class="btn btn-warning px-3 py-2">Add Name</button>
+        <div class="row mt-5">
+    
+            <!-- Input and buttons (top left)-->
+            <div class="col-6">
+                <div class="d-flex justify-content-center">
+                    <input id="nameInp" type="text" class="" placeholder="Enter a name to add" />
+                    <button id="addNameBtn" type="button" class="btn btn-warning px-3 py-2">Add Name</button>
+                </div>
+            
+                <div class="d-flex justify-content-center">
+                    <button id="generateBtn" type="button" class="btn btn-primary px-3 py-2">Pick Name</button>
+                    <button id="clearBtn" type="button" class="btn btn-danger px-3 py-2">Clear</button>
+                </div>
+    
             </div>
+            
+            <!-- Output text (top right)-->
+            <div class="col-6 d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center">
+                    <input type="radio" id="groupSizeRadio" name="groupType" value="groupSize" checked="checked">
+                    <h5>Group size:</h5>
+                    <input id="groupSizeInp" type="number" class="" value="2" min="2" max="8"/>
+                </div>
         
-            <div class="d-flex justify-content-center">
-                <button id="generateBtn" type="button" class="btn btn-primary px-3 py-2">Pick Name</button>
-                <button id="clearBtn" type="button" class="btn btn-danger px-3 py-2">Reset</button>
+                <div class="d-flex justify-content-center mt-3">
+                    <input type="radio" id="numGroupsRadio" name="groupType" value="numGroups">
+                    <h5>Num of groups:</h5>
+                    <input id="numGroupsInp" type="number" class="" value="2" min="2" max="8"/>
+                </div>
+                <button id="groupsBtn" type="button" class="btn btn-info px-3 py-2 mt-3">Create Groups</button>
+    
             </div>
-
-            <div class="d-flex justify-content-center">
-                <input type="radio" id="groupSizeRadio" name="groupType" value="groupSize" checked="checked">
-                <h5>Group size:</h5>
-                <input id="groupSizeInp" type="number" class="" value="2" min="2" max="8"/>
-            </div>
-
-            <div class="d-flex justify-content-center">
-                <input type="radio" id="numGroupsRadio" name="groupType" value="numGroups">
-                <h5>Num of groups:</h5>
-                <input id="numGroupsInp" type="number" class="" value="2" min="2" max="8"/>
-            </div>
-            <button id="groupsBtn" type="button" class="btn btn-info px-3 py-2">Create Groups</button>
+            
         </div>
 
-        <!-- Output text (top right)-->
-        <div class="col-6">
-            <h2 id="outputText"></h2>
-            <div id="outputCont" class="container-fluid outputCont text-center d-none">
-        
-                <div class="row">
-                    <div class="col-12">
-                        <img id="challImg" src="./assets/challenger.jpeg" alt="" />
-                        <!-- <h2>You Picked</h2> -->
-                        <div class="row g-0">
-                            <div class="col-6">
-                                <h2>Name:</h2>
-                                <h2 id="pickTxt"></h2>
-                            </div>
-                            <div class="col-6">
-                                <h2>Pwr Lvl:</h2>
-                                <h2 id="pwrLvlTxt">9000</h2>
-                            </div>
+    </div>
+
+        <h2 id="outputText" class="text-center"></h2>
+        <div id="outputCont" class="container-fluid outputCont text-center d-none">
+    
+            <!-- Random Pick -->
+            <div class="row">
+                <div class="col-12">
+                    <img id="challImg" src="./assets/challenger.jpeg" alt="" />
+                    <!-- <h2>You Picked</h2> -->
+                    <div class="row g-0">
+                        <div class="col-6">
+                            <h2>Name:</h2>
+                            <h2 id="pickTxt">Goku</h2>
+                        </div>
+                        <div class="col-6">
+                            <h2>Pwr Lvl:</h2>
+                            <h2 id="pwrLvlTxt">9000</h2>
                         </div>
                     </div>
                 </div>
-        
             </div>
+            
+            
         </div>
-    </div>
+        
+        <div id="groupsCont" class="container-fluid d-flex justify-content-center flex-wrap d-none">
+            
+            <!-- Example Groups -->
+            <div class="groupItem d-flex flex-column justify-content-center align-items-center px-4">
+                <h4 class="groupTtl">Group 1</h4>
+                <h6 class="groupTxt">Amar</h6>
+                <h6 class="groupTxt">Ken</h6>
+                <h6 class="groupTxt">Pedro</h6>
+                <h6 class="groupTxt">Goku</h6>
+            </div>
+    
+            <div class="groupItem d-flex flex-column justify-content-center align-items-center px-4">
+                <h4 class="groupTtl">Group 1</h4>
+                <h6 class="groupTxt">Amar</h6>
+                <h6 class="groupTxt">Ken</h6>
+                <h6 class="groupTxt">Pedro</h6>
+                <h6 class="groupTxt">Goku</h6>
+            </div>
+    
+            <div class="groupItem d-flex flex-column justify-content-center align-items-center px-4">
+                <h4 class="groupTtl">Group 1</h4>
+                <h6 class="groupTxt">Amar</h6>
+                <h6 class="groupTxt">Ken</h6>
+                <h6 class="groupTxt">Pedro</h6>
+                <h6 class="groupTxt">Goku</h6>
+            </div>
 
-    <div id="listCont" class="container-fluid d-flex flex-wrap justify-content-center">
+        </div>
+
+    <h2 class="text-center mt-5">Names List</h2>
+    <div id="listCont" class="container-fluid d-flex flex-wrap justify-content-center mb-5">
 
         <!-- Examples -->
         <div class="listItem d-flex justify-content-center align-items-center px-2">
