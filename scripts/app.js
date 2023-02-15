@@ -126,7 +126,6 @@ groupsBtn.addEventListener('click', function() {
 
 function createGroupsBySize() {
     console.log('Create groups by size', groupSizeInp.value);
-    console.log(namesList.length);
     let randomList = namesList.slice().sort((a, b) => 0.5 - Math.random());
     const groupSize = parseInt(groupSizeInp.value);
     let groups = [];
@@ -172,6 +171,22 @@ function populateGroups(array) {
 
 function createNumOfGroups() {
     console.log('Create num of groups', numGroupsInp.value);
+    let randomList = namesList.slice().sort((a, b) => 0.5 - Math.random());
+    const groupSize = Math.ceil(randomList.length / parseInt( numGroupsInp.value ));
+    let groups = [];
+    for (let i = 0; i < randomList.length; i += groupSize) {
+        console.log(i);
+        let group = randomList.slice(i, i + groupSize);
+        console.log(group);
+        // Check to see if last group is 1
+        if (group.length > 1) {
+            groups.push(group);
+        } else {
+            groups[groups.length-1].push(group[0]);
+        }
+    }
+    console.log(groups);
+    populateGroups(groups);
 }
 
 // Run at page load
