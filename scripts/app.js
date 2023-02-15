@@ -1,7 +1,7 @@
-// import data from '../data/names.json' assert { type: "json" };
+import { saveToLocalStorageByName, getLocalStorage, removeFromLocalStorage } from "./localStorage.js";
 
-let namesList = [];
-namesList = ["Danny T.", "Ken M.", "Scott M.", "Aisha", "Amar", "Andrea", "Andrew", "Brandon", "Carlos", "Caroline", "Chris", "Daniel", "Elizar", "Fernando", "Griffin", "Harrison", "Isaiah", "Jacob", "Jasmine", "Jeremy", "Jessie", "John", "Jovann", "Kenneth", "Kent", "Lerissa", "Madeline", "Manuel", "Marcel", "Mark", "N. Harrison", "Pedro", "Reed", "Richard", "Samuel", "Shaun", "Ulises"];
+let namesList = getLocalStorage();
+// namesList = ["Danny T.", "Ken M.", "Scott M.", "Aisha", "Amar", "Andrea", "Andrew", "Brandon", "Carlos", "Caroline", "Chris", "Daniel", "Elizar", "Fernando", "Griffin", "Harrison", "Isaiah", "Jacob", "Jasmine", "Jeremy", "Jessie", "John", "Jovann", "Kenneth", "Kent", "Lerissa", "Madeline", "Manuel", "Marcel", "Mark", "N. Harrison", "Pedro", "Reed", "Richard", "Samuel", "Shaun", "Ulises"];
 let lastFiveNames = [];
 
 let generateBtn = document.getElementById('generateBtn');
@@ -28,6 +28,7 @@ nameInp.addEventListener('keydown', (e) => {
 
 function addName() {
     if (nameInp.value) {
+        saveToLocalStorageByName(nameInp.value);
         namesList.push(nameInp.value);
         console.log(namesList);
         outputText.textContent = '';
@@ -51,7 +52,9 @@ function populateListItems() {
         div.append(name, icon);
         listCont.append(div);
         icon.addEventListener('click', function() {
+            removeFromLocalStorage(namesList[i]);
             namesList.splice(i, 1);
+            console.log(namesList[i]);
             populateListItems();
         });
     }
