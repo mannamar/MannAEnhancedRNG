@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+body {
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    background-color: blueviolet;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+h2 {
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+h3 {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+body {
+    background-image: url('../assets/dbz2.jpg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-color: #000000;
+}
+
+#generateBtn,
+#clearBtn {
+    margin-top: 65px;
+    margin-bottom: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    width: 120px;
+}
+
+#clearBtn {
+    margin-left: 50px;
+}
+
+#outputCont {
+    max-width: 800px;
+    width: 80%;
+}
+
+#lastFiveTxt {
+    white-space: pre-line;
+}
+
+#challImg {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#lastFiveTitle {
+    padding-top: 25px;
+}
