@@ -70,7 +70,7 @@ body {
 }
 
 #listCont {
-    max-width: 800px;
+    max-width: 1000px;
     /* background-color: aliceblue; */
     max-height: 400px;
     overflow-y: scroll;
